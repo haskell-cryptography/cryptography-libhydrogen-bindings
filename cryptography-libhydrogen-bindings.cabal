@@ -1,0 +1,52 @@
+cabal-version:      3.0
+name:               cryptography-libhydrogen-bindings
+version:            1.0.0
+category:           Cryptography
+synopsis:           FFI bindings to libhydrogen
+description:
+  Low-level bindings to libhydrogen. The C code is embedded, which means you 
+  don't have to worry about external libraries, linking, or any of that stuff.
+
+homepage:
+  https://github.com/haskell-cryptography/cryptography-libhydrogen-bindings
+
+bug-reports:
+  https://github.com/haskell-cryptography/cryptography-libhydrogen-bindings/issues
+
+author:             Koz Ross
+maintainer:         Koz Ross
+license:            BSD-3-Clause
+build-type:         Simple
+tested-with:        GHC ==8.10.7 || ==9.0.1 || ==9.2.2
+extra-source-files:
+  cbits/hydrogen.h
+  CHANGELOG.md
+  LICENSE
+  LICENSE.LIBHYDROGEN
+  README.md
+
+source-repository head
+  type:     git
+  location:
+    https://github.com/haskell-cryptography/cryptography-libhydrogen-bindings
+
+common common
+  build-depends:    base >=4.14 && <5
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+    -Wmissing-export-lists -fhide-source-paths -Wno-unused-do-bind
+    -fwrite-ide-info -hiedir=.hie -haddock
+
+  default-language: Haskell2010
+
+library
+  import:          common
+  include-dirs:    cbits
+  cc-options:      -O3 -Wno-type-limits
+  c-sources:
+    cbits/hydrogen.c
+    cbits/hydrogen.h
+
+  exposed-modules: Cryptography.Hydrogen.Helpers
+  hs-source-dirs:  src

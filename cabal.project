@@ -1,0 +1,4 @@
+packages: ./cryptography-libhydrogen-bindings.cabal
+
+package cryptography-libhydrogen-bindings
+  ghc-options: -Werror
