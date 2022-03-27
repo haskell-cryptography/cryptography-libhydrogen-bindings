@@ -48,5 +48,9 @@ library
     cbits/hydrogen.c
     cbits/hydrogen.h
 
-  exposed-modules: Cryptography.Hydrogen.Helpers
+  exposed-modules:
+    Cryptography.Hydrogen.Bindings.Helpers
+    Cryptography.Hydrogen.Bindings.Main
+    Cryptography.Hydrogen.Bindings.Random
+
   hs-source-dirs:  src

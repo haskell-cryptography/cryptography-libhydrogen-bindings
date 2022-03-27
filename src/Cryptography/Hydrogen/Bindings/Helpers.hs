@@ -1,6 +1,6 @@
 {-# LANGUAGE CApiFFI #-}
 
-module Cryptography.Hydrogen.Helpers
+module Cryptography.Hydrogen.Bindings.Helpers
   ( -- * Zeroing memory
     hydroMemzero,
 
