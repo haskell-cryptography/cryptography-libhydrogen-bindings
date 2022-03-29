@@ -49,6 +49,7 @@ library
     cbits/hydrogen.h
 
   exposed-modules:
+    Cryptography.Hydrogen.Bindings.GenericHashing
     Cryptography.Hydrogen.Bindings.Helpers
     Cryptography.Hydrogen.Bindings.Main
     Cryptography.Hydrogen.Bindings.Random
